@@ -5,10 +5,10 @@ class Coffee:
         if size is None:
             size = input("Please select your coffee size : Small, Medium or Large ")
         if price is None:
-            price = int(input("Please input the coffee price: "))
+            price = float(input("Please input the coffee price: "))
             
         self.size = size
-        self.price = int(price)
+        self.price = float(price)
 
     @property
     def size(self):
@@ -23,5 +23,5 @@ class Coffee:
             self._size = value
 
     def tip(self):
-        self.price += 1
-        print("This coffee is great, here's a tip!")
+        self.price += 0.5
+        print("This coffee is great, here’s a tip!")

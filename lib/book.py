@@ -4,7 +4,6 @@ class Book:
     def __init__(self, title=None, page_count=None):
         if title is None:
             title = input("Please input the title of the book:... ")
-        
         self.title = title
 
         if page_count is None:
@@ -16,9 +15,9 @@ class Book:
                 except ValueError:
                     print("page_count must be an integer")
         else:
-            try:
-                self.page_count = int(page_count)
-            except (ValueError, TypeError):
+            if isinstance(page_count, int):
+                self.page_count = page_count
+            else:
                 print("page_count must be an integer")
                 self.page_count = page_count
 
