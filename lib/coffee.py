@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
 class Coffee:
-    def __init__(self):
-        user_size = input("Please select your coffee size : Small, Medium or Large ")
-        user_price = int(input("Please input the coffee price: "))
-        
-        self.size = user_size
-        self.price = user_price
+    def __init__(self, size=None, price=None):
+        if size is None:
+            size = input("Please select your coffee size : Small, Medium or Large ")
+        if price is None:
+            price = int(input("Please input the coffee price: "))
+            
+        self.size = size
+        self.price = int(price)
 
     @property
     def size(self):
